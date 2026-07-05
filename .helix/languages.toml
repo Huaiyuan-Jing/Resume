@@ -1,0 +1,7 @@
+[[language]]
+name = "typst"
+formatter = { command = "typstyle" }
+auto-format = true
+
+[language-server.tinymist.config]
+exportPdf = "onSave"
