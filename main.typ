@@ -1,7 +1,7 @@
 #import "@preview/basic-resume:0.2.9": *
 
 #let name = "Huaiyuan Jing"
-#let location = "Urbana-Champaign, IL"
+#let location = "New York, NY"
 #let email = "Is.hyjing@gmail.com"
 #let github = "github.com/Huaiyuan-Jing"
 // #let linkedin = ""
@@ -58,17 +58,26 @@
 - Ranked elite among university teams, excelling in dynamic programming, advanced data structures, and edge-case handling under extreme time constraints and psychological pressure.
 
 
-== Experience & Research
+== Projects
 
-#work(
-  title: "Research Assistant",
-  location: "Madison, WI",
-  company: "Madison Experimental Mathematics (MXM) Lab",
-  dates: dates-helper(start-date: "Feb 2025", end-date: "Present"),
+#project(
+  name: "High-Frequency Limit Order Book",
+  role: "Independent Dev",
+  url: "codeberg.org/HYJING/hft_orderbook",
 )
-- Architected a high-throughput, concurrent toolkit to compute cryptographic hash values for complex graphs and evaluate combinatorial game strategies (Grundy numbers), *successfully evaluating 50 critical data points under extreme $O(2^m)$ time-complexity workloads*.
-- Leveraged Rust's Send/Sync traits and ownership model to eliminate data races and deadlocks, designing memory-safe parallel processing streams that maximize multi-core CPU and GPU saturation.
-- Optimized graph traversal routines with low-latency lock-free structures, minimizing algorithmic latency under high-complexity, multi-threaded workloads.
+- Designed and implemented an ultra-low latency, fixed-point limit order book (LOB) matching engine from scratch using Modern C++ (C++20).
+- Achieved an execution throughput of *55 million orders per second* under intensive multivariable cross-order stress tests, benchmarked via Google Benchmark on an 8-core CPU system.
+- Optimized memory layout by combining `std::map` for price levels with custom intrusive doubly-linked lists for strict FIFO order queues, minimizing lookup and allocation overhead to $O(1)$ for cancellation and insertion.
+- Engineered a vector-backed object-pool memory allocator (`VectorOrderBook`) to completely eliminate runtime OS heap allocations, preventing memory fragmentation and maximizing CPU L1/L2 data cache hit rates.
+
+#project(
+  name: "Linux Security Boot Module",
+  role: "Independent Dev",
+  url: "github.com/melody0123/dracut-cryptsetup-duress",
+)
+- Maintained a security-critical initramfs module (Dracut-Cryptsetup-Duress) for LUKS-encrypted subsystems, demonstrating deep understanding of the Linux boot process and robust scripting.
+
+== Experience & Research
 
 #work(
   title: "First Author",
@@ -80,23 +89,15 @@
 - Coherently reused block-encoding ancilla to produce a unified *$(1, 1, ε)$-block encoding* for general matrices, cleanly distributing a total error budget of $ε$ into *two $ε/2$ branches* to guarantee strict linear error propagation.
 - Conducted rigorous query complexity and mathematical error bounds analysis, bounding the polynomial degree for absolute-value approximation to *$O(1/delta_"abs" log(1/eta_"abs"))$* to prove optimal computational scaling.
 
-== Projects
 
-#project(
-  name: "High-Frequency Trading (HFT) Matching Engine & Order Book",
-  role: "Independent Developer",
-  dates: "Jul 2026",
-  url: "codeberg.org/HYJING/hft_orderbook",
-)
-- Designed and implemented an ultra-low latency, fixed-point limit order book (LOB) matching engine from scratch using Modern C++ (C++20).
-- Achieved an execution throughput of *38.55 million orders per second (38.5496M/s)* under intensive multivariable cross-order stress tests, benchmarked via Google Benchmark on an 8-core CPU system.
-- Optimized memory layout by combining `std::map` for price levels with custom intrusive doubly-linked lists for strict FIFO order queues, minimizing lookup and allocation overhead to $O(1)$ for cancellation and insertion.
-- Engineered a vector-backed object-pool memory allocator (`VectorOrderBook`) to completely eliminate runtime OS heap allocations, preventing memory fragmentation and maximizing CPU L1/L2 data cache hit rates.
 
-#project(
-  name: "Linux Infrastructure & Kernel Optimization",
-  role: "Independent Developer",
-  dates: "Systems Automation",
-  url: "",
+#work(
+  title: "Research Assistant",
+  location: "Madison, WI",
+  company: "Madison Experimental Mathematics (MXM) Lab",
+  dates: dates-helper(start-date: "Feb 2024", end-date: "Sep 2024"),
 )
-- Maintained a security-critical initramfs module (Dracut-Cryptsetup-Duress) for LUKS-encrypted subsystems, demonstrating deep understanding of the Linux boot process and robust scripting.
+- Architected a high-throughput, concurrent toolkit to compute cryptographic hash values for complex graphs and evaluate combinatorial game strategies (Grundy numbers), *successfully evaluating 50 critical data points under extreme $O(2^m)$ time-complexity workloads*.
+- Leveraged Rust's Send/Sync traits and ownership model to eliminate data races and deadlocks, designing memory-safe parallel processing streams that maximize multi-core CPU and GPU saturation.
+- Optimized graph traversal routines with low-latency lock-free structures, minimizing algorithmic latency under high-complexity, multi-threaded workloads.
+
